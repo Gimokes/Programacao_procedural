@@ -1,0 +1,25 @@
+1:
+#include <stdio.h>
+#include <stdlib.h>
+
+void main()
+{
+    int a[6];
+    a[0]= 1;
+    a[1]= 0;
+    a[2]= 5;
+    a[3]=-2;
+    a[4]=-5;
+    a[5]=7;
+    int soma;
+    soma = a[0] + a[1] + a[5];
+    printf("O valor da soma é de: %d\n", soma);
+    a[4]= 100;
+    printf("Vetor 0: %d\n", a[0]);
+    printf("Vetor 1: %d\n", a[1]);
+    printf("Vetor 2: %d\n", a[2]);
+    printf("Vetor 3: %d\n", a[3]);
+    printf("Vetor 4: %d\n", a[4]);
+    printf("Vetor 5: %d\n", a[5]);
+}
+2:
