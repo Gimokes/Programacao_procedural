@@ -1,0 +1,519 @@
+1:
+#include <stdio.h>
+
+void main()
+{
+    int a = 1;
+    int contador = 0;
+    while (contador < 5)
+    {
+        if(a%3==0)
+        {
+            printf("%d\n",a);
+            contador++;
+        }
+        a++;
+    }
+}
+2:
+#include <stdio.h>
+
+void main()
+{
+    int a;
+    for(a=1; a<=100; a++)
+    {
+        printf("%d\n", a);
+    }
+    a=1;
+    while(a<=100)
+    {
+        printf("%d\n", a);
+        a++;
+    }
+    a=1;
+    do
+    {
+        printf("%d\n", a);
+        a++;
+    }
+    while(a<=100);
+}
+3:
+#include <stdio.h>
+
+void main()
+{
+    int a=10;
+    while (a>=0)
+    {
+        printf("%d\n",a);
+        a--;
+    }
+    printf("fim\n");
+}
+4:
+#include <stdio.h>
+
+void main()
+{
+    int a=0;
+    while(a<=100000)
+    {
+        printf("%d\n", a);
+        a+= 1000;
+    }
+}
+5:
+#include <stdio.h>
+
+void main()
+{
+    int a=0;
+    int soma=0;
+    while (a<10)
+    {
+        int valor;
+        printf("insira um valor: ");
+        scanf("%d", &valor);
+        soma+= valor;
+        a++;
+    }
+    printf("a soma dos valores é %d\n", soma);
+}
+6:
+#include <stdio.h>
+
+void main()
+{
+    int a=0;
+    int soma=0;
+    while (a<10)
+    {
+        int valor;
+        printf("insira um valor: ");
+        scanf("%d", &valor);
+        soma+= valor;
+        a++;
+    }
+    printf("a media dos valores é %d\n", soma/10);
+}
+7:
+#include <stdio.h>
+
+void main()
+{
+    int a=0;
+    int soma=0;
+    int contador=0;
+    while (a<10)
+    {
+        int valor;
+        printf("insira um valor: ");
+        scanf("%d", &valor);
+        if(valor >0)
+        {
+            soma+=valor;
+            contador++;
+        }
+        a++;
+    }
+    printf("a media dos valores é %d\n", soma/contador);
+}
+8:
+#include <stdio.h>
+
+void main()
+{
+    int a=0;
+    int min=0;
+    int max=0;
+    while(a<10)
+    {
+        int valor;
+        printf("insira um valor");
+        scanf("%d", &valor);
+        if(a==0)
+        {
+            min=valor;
+            max=valor;
+        }
+        else
+        {
+            if(valor<min)
+            {
+                min=valor;
+            }
+            if(valor>max)
+            {
+                max=valor;
+            }
+        }
+        a++;
+    }
+    printf("O menor valor digitado foi %d\n",min);
+    printf("O maior valor digitado foi %d\n",max);
+}
+9:
+#include <stdio.h>
+
+void main()
+{
+    int n;
+    printf("insira um valor:");
+    scanf("%d", &n);
+    int a=1;
+    int contador=0;
+    while(contador<n)
+    {
+        if(a%2!=0)
+        {
+            printf("%d\n",a);
+            contador++;
+        }
+        a++;
+    }
+}
+10:
+#include <stdio.h>
+
+void main()
+{
+    int a=1;
+    int contador=0;
+    int soma=0;
+    while(contador<50)
+    {
+        if(a%2==0)
+        {
+            soma+=a;
+            contador++;
+        }
+        a++;
+    }
+    printf("A soma dos 50 primeiros numeros é de %d\n", soma);
+}
+
+11:
+#include <stdio.h>
+
+void main()
+{
+    int n;
+    printf("insira um valor");
+    scanf("%d", &n);
+    int a=0;
+    while(a<=n)
+    {
+        printf("%d\n",a);
+        a++;
+    }
+}
+
+12:
+#include <stdio.h>
+
+void main()
+{
+    int n;
+    printf("insira um valor:");
+    scanf("%d", &n);
+    int a=1;
+    int soma=0;
+    while(a<=n)
+    {
+        if(n%a==0)
+        {
+            soma+=a;
+        }
+        a++;
+    }
+    printf("a soma dos divisores de %d é de %d\n",n,soma);
+}
+
+13:
+#include <stdio.h>
+
+void main()
+{
+    int a=1;
+    int soma=0;
+    while(a<1000)
+    {
+        if(a%3==0||a%5==0)
+        {
+            soma+=a;
+        }
+        a++;
+    }
+    printf("%d\n",soma);
+}
+
+14:
+#include <stdio.h>
+#include <stdlib.h>
+
+void main()
+{
+    int n;
+    printf("insira um valor:");
+    scanf("%d",&n);
+    int a=0;
+    while(a<n)
+    {
+        int d1=rand()%6+1;
+        int d2=rand()%6+1;
+        printf("%d%d",d1,d2);
+        if(d1>d2)
+        {
+            printf(">\n");
+        }
+        else if(d1<d2)
+        {
+            printf("<\n");
+        }
+        else
+        {
+            printf("=\n");
+        }
+        a++;
+    }
+}
+
+15:
+#include <stdio.h>
+#include <math.h>
+
+void main()
+{
+    int valor;
+    printf("insira um valor:");
+    scanf("%d",&valor);
+    while(valor>0)
+    {
+        printf("o quadrado de %d é %d\n", valor,valor*valor);
+        printf("O cubo de %d é %d\n",valor,valor*valor*valor);
+        printf("A raiz quadrada de %d é %f\n", valor,sqrt(valor));
+        printf("insira um valor:");
+        scanf("%d", &valor);
+    }
+}
+
+16:
+
+    int opcao=0;
+    while(opcao!=5)
+    {
+        printf("escolha uma opcao:\n");
+        printf("1-adicao\n");
+        printf("2-subtracao\n");
+        printf("3-multiplicacao\n");
+        printf("4-divisao\n");
+        printf("5-sair\n");
+        printf("opcao:");
+        scanf("%d",&opcao);
+        if(opcao==5)
+        {
+            break;
+        }
+        int a,b;
+        printf("insira 2 valores:\n");
+        scanf("%d %d",&a,&b);
+        if(opcao==1)
+        {
+            printf("%d+%d=%d\n",a,b,a+b);
+        }
+        else if(opcao==2)
+        {
+            printf("%d-%d=%d\n",a,b,a-b);
+        }
+        else if(opcao==3)
+        {
+            printf("%d*%d=%d\n",a,b,a*b);
+        }
+        else if(opcao==4)
+        {
+            printf("%d/%d=%d\n",a,b,a/b);
+        }
+        else
+        {
+            printf("opcao invalida!\n");
+        }
+    }
+17:
+#include <stdio.h>
+
+void main()
+{
+    float chico=1.50;
+    float ze;1.10;
+    int anos=0;
+    while(ze<=chico)
+    {
+        chico+=0.02;
+        ze+=0.03;
+        anos++;
+    }
+    printf("Ze sera maior que chico em %d anos\n",anos);
+}
+18:
+#include <stdio.h>
+
+void main()
+{
+    int ano=1995;
+    float salario=2000;
+    while(ano<2022)
+    {
+        if(ano==1995)
+        {
+            printf("salario de %d: R$%.2f\n", ano,salario);
+        }
+        else
+        {
+            salario*=1.015;
+            printf("salario de %d:R$%.2f\n",ano,salario);
+        }
+        ano++;
+    }
+}
+19:
+#include <stdio.h>
+
+void main()
+{
+    int valor;
+    printf("insira o valor do saque: ");
+    scanf("%d", &valor);
+    int notas100=valor/100;
+    valor = valor%100;
+    int notas50=valor/50;
+    valor=valor%50;
+    int notas20=valor/20;
+    valor=valor%20;
+    int notas10=valor/10;
+    valor=valor%10;
+    int notas5=valor/5;
+    valor=valor%5;
+    int notas2=valor/2;
+    valor=valor%2;
+    int notas1=valor/1;
+    valor=valor%1;
+    printf("Notas de 100: %d\n", notas100);
+    printf("Notas de 50: %d\n", notas50);
+    printf("Notas de 20: %d\n", notas20);
+    printf("Notas de 10: %d\n", notas10);
+    printf("Notas de 5: %d\n", notas5);
+    printf("Notas de 2: %d\n", notas2);
+    printf("Notas de 1: %d\n", notas1);
+}
+20:
+#include <stdio.h>
+
+void main()
+{
+    int a=1;
+    int soma=0;
+    while(a<2000000)
+    {
+        int b=1;
+        int contador=0;
+        while(b<=a)
+        {
+            if(a%b==0)
+            {
+                contador++;
+            }
+            b++;
+        }
+        if(contador==2)
+        {
+            soma+=a;
+        }
+        a++;
+    }
+    printf("%d\n",soma);
+}
+21:
+#include <stdio.h>
+
+void main()
+{
+    int a,b;
+    printf("insira 2 numeros inteiros:");
+    scanf("%d %d",&a,&b);
+    int x=a;
+    int contador=0;
+    while (x<=b)
+    {
+        int y=1;
+        int divisor=0;
+        while(y<=x)
+        {
+            if(x%y==0)
+            {
+                divisor++;
+            }
+            y++;
+        }
+        if(divisor==2)
+        {
+            contador++;
+        }
+        x++;
+    }
+    printf("Existe %d numeros primos entre %d e %d\n",contador,a,b);
+}
+22:
+#include <stdio.h>
+
+void main()
+{
+    int a=100;
+    int max=0;
+    while (a<1000)
+    {
+        int b=100;
+        while(b<1000)
+        {
+            int produto=a*b;
+            int reverso=0;
+            int temp=produto;
+            while(temp>0)
+            {
+                reverso=reverso*10+temp%10;
+                temp/=10;
+            }
+            if(produto==reverso&&produto>max)
+            {
+                max=produto;
+            }
+            b++;
+        }
+        a++;
+    }
+    printf("%d\n",max);
+}
+23:
+#include <stdio.h>
+
+void main()
+{
+    int n;
+    printf("insira um valor:");
+    scanf("%d",&n);
+    int a=1;
+    int contador=1;
+    while(a<=n)
+    {
+        int b=1;
+        while(b<=a)
+        {
+            printf("%d",contador);
+            contador++;
+            b++;
+        }
+        printf("\n");
+        a++;
+    }
+}

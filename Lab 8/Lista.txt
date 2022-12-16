@@ -1,0 +1,91 @@
+16:
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+struct filme
+{
+    char nome[20];
+    int ano;
+    int duracao;
+};
+struct diretor
+{
+    char nome[20];
+    int qtd_filme;
+    struct filme *filmes;
+};
+
+int main()
+{
+    struct diretor diretores[5];
+    for(int x=0;x<5;x++)
+    {
+        printf("insira o nome do diretor %d;",x+1);
+        setbuf(stdin,NULL);
+        fgets(diretores[x].nome,20,stdin);
+        printf("insira a quantidade de filmes do diretor %d:",x+1);
+        scanf("%d",&diretores[x].qtd_filme);
+        diretores[x].filmes=(struct filme*)malloc(diretores[x].qtd_filme*sizeof(struct filme));
+        
+        for(int y=0;y<diretores[x].qtd_filme;y++)
+        {
+            printf("insira o nome do filme %d do diretor %d: ", y+1,x+1);
+            setbuf(stdin, NULL);
+            fgets(diretores[x].filmes[y].nome,20,stdin);
+            printf("insira o ano do filme%d do diretor %d:", y+1,x+1);
+            scanf("%d",&diretores[x].filmes[y].ano);
+            printf("insira a duracao do filme %d do diretor %d:",y+1,x+1);
+            scanf("%d", &diretores[x].filmes[y].duracao);
+        }
+        printf("\n");
+    }
+    
+    char nome[20];
+    printf("insira o nome do diretor que deseja procurar:");
+    setbuf(stdin,NULL);
+    fgets(nome,20,stdin);
+    while(nome[0]!='\0')
+    {
+        for(int x=0;x<5;x++)
+        {
+            if(strcmp(diretores[x].nome,nome)==0)
+            {
+                printf("filmes do diretor %s:", diretores[x].nome);
+                for (int y=0; y<diretores[x].qtd_filme;y++)
+                {
+                    printf("%s (%d)",diretores[x].filmes[y].nome, diretores[x].filmes[y].ano);
+                }
+                printf("\n\n");
+            }
+        }
+        printf("Insira o nome do diretor que deseja procurar:");
+        scanf("%s", nome);
+    }
+}
+18:
+#include <stdio.h>
+
+struct dma
+{
+    int dia;
+    int mes;
+    int ano;
+};
+int main()
+{
+    struct dma data1, data2;
+    printf("insira a primeira data(dd/mm/aaaa):\n");
+    scanf("%d/%d/%d", &data1.dia, &data1.mes, &data1.ano);
+    
+    printf("insira a segunda data (dd/mm/aaaa):\n");
+    scanf("%d/%d/%d", &data2.dia,&data2.mes, &data2.ano);
+    
+    int dias1= data1.dia+(data1.mes*30)+(data1.ano*365);
+    int dias2= data2.dia+(data2.mes*30)+(data2.ano*365);
+    
+    int dias=dias2-dias1;
+    printf("dias decorrido: %d\n", dias<0?dias*-1:dias);
+    
+    return 0;
+}

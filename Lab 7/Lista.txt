@@ -1,0 +1,46 @@
+14:
+#include <stdio.h>
+
+void main()
+{
+    char str1[100], str2[100];
+    int x,y,z;
+    
+    fgets(str1,100,stdin);
+    fgets(str2,100,stdin);
+    scanf("%d",&z);
+    for(x=0;str1[x]!='\0';x++)
+    {
+        
+    }
+    for(y=0;y<z;y++)
+    {
+        str1[x+y]=str2[y];
+    }
+    str1[x+y]='\0';
+    printf("%s",str1);
+}
+16:
+#include <stdio.h>
+
+void main()
+{
+    char str[1000];
+    int x,y,produto, max_produto=0;
+    
+    fgets(str,1000,stdin);
+    
+    for(x=0;str[x+4]!='\0'&&str[x+4]!='\n';x++)
+    {
+        produto=1;
+        for(y=x;y<x+5;y++)
+        {
+            produto*=(str[y]-48);
+        }
+        if(produto>max_produto)
+        {
+            max_produto=produto;
+        }
+    }
+    printf("o maior produto é %d\n",max_produto);
+}

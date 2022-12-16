@@ -1,0 +1,144 @@
+7:
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+    int a[5][5];
+    for(int x=0;x<5;x++)
+    {
+        for(int y=0;y<5;y++)
+        {
+            int valor;
+            int existe;
+            do
+            {
+                valor=rand()%100;
+                existe=0;
+                for(int k=0;k<y;k++)
+                {
+                    if(a[x][k]==valor)
+                    {
+                        existe=1;
+                        break;
+                    }
+                }
+                for(int k=0;k<x;k++)
+                {
+                    if(a[x][y]==valor)
+                    {
+                        existe=1;
+                        break;
+                    }
+                }
+            }
+            while(existe);
+            a[x][y]=valor;
+        }
+    }
+    for(int x=0;x<5;x++)
+    {
+        for(int y=0;y<5;y++)
+        {
+            printf("%d\t",a[x][y]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+8:
+#include <stdio.h>
+
+int main(void)
+{
+    int a[2][2], b[2][2];
+    int opcao;
+    int constante;
+    for(int x=0;x<2;x++)
+    {
+        for(int y=0;y<2;y++)
+        {
+            printf("insira o %d valor da matriz a:\n", x*2+y+1);
+            scanf("%d",&a[x][y]);
+        }
+    }
+    for(int x=0;x<2;x++)
+    {
+        for(int y=0;y<2;y++)
+        {
+            printf("insira o %d valor da matriz b:\n",x*2+y+1);
+            scanf("%d", &b[x][y]);
+        }
+    }
+    printf("1-somar as matrizes\n");
+    printf("2-subtrair a primeira matriz da segunda\n");
+    printf("3-adicionar uma constante as matrizes\n");
+    printf("4-imprimir as matrizes\n");
+    printf("insira a opcao desejada\n");
+    scanf("%d",&opcao);
+    switch(opcao)
+    {
+        case 1:
+        for(int x=0;x<2;x++)
+        {
+            for(int y=0;y<2;y++)
+            {
+                printf("%d", a[x][y]+b[x][y]);
+            }
+            printf("\n");
+        }
+        break;
+        case 2:
+        for(int x=0;x<2;x++)
+        {
+            for(int y=0;y<2;y++)
+            {
+                printf("%d",a[x][y]-b[x][y]);
+            }
+            printf("\n");
+        }
+        break;
+        case 3:
+        printf("insira uma constante:");
+        scanf("%d",&constante);
+        for(int x=0;x<2;x++)
+        {
+            for(int y=0;y<2;y++)
+            {
+                printf("%d",a[x][y]+constante);
+            }
+            printf("\n");
+        }
+        for(int x=0;x<2;x++)
+        {
+            for(int y=0;y<2;y++)
+            {
+                printf("%d",b[x][y]+constante);
+            }
+            printf("\n");
+        }
+        break;
+        case 4:
+        for(int x=0; x<2;x++)
+        {
+            for(int y=0;y<2;y++)
+            {
+                printf("%d",a[x][y]);
+            }
+            printf("\n");
+        }
+        for(int x=0;x<2;x++)
+        {
+            for(int y=0;y<2;y++)
+            {
+                printf("%d",b[x][y]);
+            }
+            printf("\n");
+        }
+        break;
+        default:
+        printf("opcao invalida\n");
+        break;
+    }
+    return 0;
+}
